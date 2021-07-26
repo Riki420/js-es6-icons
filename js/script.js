@@ -1,8 +1,6 @@
 
-
-
-
-//*  GIRO NELL'ARRAY DI OGGETTI PER CREARE IL TEMPLATE
+const renderIcons = (icons, targetElement) => {
+   //*  GIRO NELL'ARRAY DI OGGETTI PER CREARE IL TEMPLATE
 //creo una stringa vuota
 let iconsTemplate = '';
 // giro nell'array per crearne il template
@@ -17,7 +15,14 @@ icons.forEach((icon) =>{
         </div>
     </div>
     `
-});
+}); 
+targetElement.innerHTML = iconsTemplate;
+
+}
+
+
+
+
 
 const cardSection = document.querySelector('#icons .row');
-cardSection.innerHTML = iconsTemplate;
+renderIcons(icons, cardSection);
