@@ -1,0 +1,19 @@
+/*RESET*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.my-s-height{
+    min-height: 60px;
+}
+
+.bg-blue{
+    background-color: #29b1dd;
+}
+
+.logo-text{
+    font-family: 'Comic Neue', cursive;
+    color: #29b1dd;
+}
