@@ -12,7 +12,7 @@ icons.forEach((icon, index) =>{
     hasOffSet = 'offset-md-1';
     }
     iconsTemplate += `
-    <div class="col col-sm-4 col-md-2 text-center ${hasOffSet}">
+    <div class="col-12 col-sm-4 col-md-2 text-center ${hasOffSet}">
         <div class="card">
             <div class="card-body">
                 <i class="${icon.family} ${icon.prefix}${icon.name} fa-x2"></i>
@@ -29,3 +29,19 @@ targetElement.innerHTML = iconsTemplate;
 //*STAMPO IN PAGINA
 const cardSection = document.querySelector('#icons .row');
 renderIcons(icons, cardSection);
+
+//* FILTRI
+const selectField = document.getElementById('type-filter');
+
+selectField.addEventListener('change', () =>{
+    const filterValue = selectField.value;
+
+    if(filterValue === 'all'){
+        renderIcons(icons, cardSection);
+        return
+    }
+
+    const filteredIcons = icons.filter((icon) => filterValue === icon.type);
+    renderIcons(filteredIcons, cardSection);
+    
+});
